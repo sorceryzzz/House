@@ -23,6 +23,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blowing.MoveHouse.Model", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blowing.MoveHouse.WebPoint", "Blowing.MoveHouse.WebPoint\Blowing.MoveHouse.WebPoint.csproj", "{297984EE-9738-4A66-9BB4-332ADE571B73}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F58AE8B5-3824-42C3-85E4-866A74F9CE96}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit", "Unit", "{3EA9D62B-182A-4927-9854-B0E1C9FDD0B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blowing.MoveHouse.Web.Unit", "Blowing.MoveHouse.Web.Unit\Blowing.MoveHouse.Web.Unit.csproj", "{2C16DEEF-FB58-4C59-AA64-9DF8757BA530}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +60,10 @@ Global
 		{297984EE-9738-4A66-9BB4-332ADE571B73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{297984EE-9738-4A66-9BB4-332ADE571B73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{297984EE-9738-4A66-9BB4-332ADE571B73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C16DEEF-FB58-4C59-AA64-9DF8757BA530}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C16DEEF-FB58-4C59-AA64-9DF8757BA530}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C16DEEF-FB58-4C59-AA64-9DF8757BA530}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C16DEEF-FB58-4C59-AA64-9DF8757BA530}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,5 +74,6 @@ Global
 		{F2A5D50E-E6C2-40AE-8019-DF530407CA52} = {282F8104-947A-4E9A-9E39-FCD3D45C637A}
 		{2C655300-280D-49EB-A2F3-CA00955B6EFB} = {8BDA855B-B7C0-4508-8723-1C36259EF08C}
 		{297984EE-9738-4A66-9BB4-332ADE571B73} = {0BA724F9-B7EB-49A7-8014-7918F87F7ACF}
+		{2C16DEEF-FB58-4C59-AA64-9DF8757BA530} = {3EA9D62B-182A-4927-9854-B0E1C9FDD0B2}
 	EndGlobalSection
 EndGlobal
