@@ -1,0 +1,83 @@
+﻿@{
+    Layout = null;
+}
+@if (ViewBag.PageCount > 1)
+{
+    <div class="pagecompus tc pt20 pb20">
+        @if (ViewBag.PageCount < 11)
+        {
+            if (ViewBag.PageIndex != 1)
+            {
+                <a href="javascript:;" onclick="@(ViewBag.CallBack)(1)">首页</a>
+                <a href="javascript:;" onclick="@(ViewBag.CallBack)(@(ViewBag.PageIndex - 1))">上一页</a>
+            }
+            for (var i = 1; i <= ViewBag.PageCount; i++)
+            {
+                string className = string.Empty;
+                className = (i == ViewBag.PageIndex ? "hot" : "");
+                string vie_clik = (i == ViewBag.PageIndex ? "" : ViewBag.CallBack + "(" + i + ")");
+                <a href="javascript:;" class="@className" onclick="@(vie_clik)">@i</a>
+            }
+            if (ViewBag.PageIndex != ViewBag.PageCount)
+            {
+                <a href="javascript:;" onclick="@(ViewBag.CallBack)(@(ViewBag.PageIndex + 1))">下一页</a>
+                <a href="javascript:;" onclick="@(ViewBag.CallBack)(@ViewBag.PageCount)">尾页</a>
+            }
+        }
+        else
+        {
+            if (ViewBag.PageIndex - 4 >= 1 && ViewBag.PageIndex + 5 <= ViewBag.PageCount)
+            {
+                <a href="javascript:;" onclick="@(ViewBag.CallBack)(1)">首页</a>
+                <a href="javascript:;" onclick="@(ViewBag.CallBack)(@(ViewBag.PageIndex - 1))">上一页</a>
+                for (var i = ViewBag.PageIndex - 4; i <= ViewBag.PageIndex + 5; i++)
+                {
+                    string className = string.Empty;
+                    className = (i == ViewBag.PageIndex ? "hot" : "");
+                    string vie_clik = (i == ViewBag.PageIndex ? "" : ViewBag.CallBack + "(" + i + ")");
+                    <a href="javascript:;" class="@className" onclick="@(vie_clik)">@i</a>
+                }
+                if (ViewBag.PageIndex + 5 != ViewBag.PageCount)
+                {
+                    <a href="javascript:;" onclick="@(ViewBag.CallBack)(@(ViewBag.PageIndex + 1))">下一页</a>
+                    <a href="javascript:;" onclick="@(ViewBag.CallBack)(@ViewBag.PageCount)">尾页</a>
+                }
+            }
+            else if (ViewBag.PageIndex - 4 < 1)
+            {
+                if (ViewBag.PageIndex != 1)
+                {
+                    <a href="javascript:;" onclick="@(ViewBag.CallBack)(1)">首页</a>
+                    <a href="javascript:;" onclick="@(ViewBag.CallBack)(@(ViewBag.PageIndex - 1))">上一页</a>
+                }
+                for (var i = 1; i <= 10; i++)
+                {
+                    string className = string.Empty;
+                    className = (i == ViewBag.PageIndex ? "hot" : "");
+                    string vie_clik = (i == ViewBag.PageIndex ? "" : ViewBag.CallBack + "(" + i + ")");
+                    <a href="javascript:;" class="@className" onclick="@(vie_clik)">@i</a>
+                }
+                if (ViewBag.PageIndex != ViewBag.PageCount)
+                {
+                    <a href="javascript:;" onclick="@(ViewBag.CallBack)(@(ViewBag.PageIndex + 1))">下一页</a>
+                    <a href="javascript:;" onclick="@(ViewBag.CallBack)(@ViewBag.PageCount)">尾页</a>
+                }
+            }
+            else if (ViewBag.PageIndex + 5 > ViewBag.PageCount)
+            {
+                if (ViewBag.PageIndex != 1)
+                {
+                    <a href="javascript:;" onclick="@(ViewBag.CallBack)(1)">首页</a>
+                    <a href="javascript:;" onclick="@(ViewBag.CallBack)(@(ViewBag.PageIndex - 1))">上一页</a>
+                }
+                for (var i = ViewBag.PageCount - 9; i <= ViewBag.PageCount; i++)
+                {
+                    string className = string.Empty;
+                    className = (i == ViewBag.PageIndex ? "hot" : "");
+                    string vie_clik = (i == ViewBag.PageIndex ? "" : ViewBag.CallBack + "(" + i + ")");
+                    <a href="javascript:;" class="@className" onclick="@(vie_clik)">@i</a>
+                }
+            }
+        }
+    </div>
+}

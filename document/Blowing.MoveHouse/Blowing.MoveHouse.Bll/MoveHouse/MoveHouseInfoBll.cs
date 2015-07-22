@@ -17,6 +17,19 @@ namespace Blowing.MoveHouse.Bll.MoveHouse
 
 
         #region - method -
+
+         /// <summary>
+        /// 获取搬家信息分页
+        /// </summary>
+        /// <param name="uid">用户ID</param>
+        /// <param name="pageIndex">索引</param>
+        /// <param name="pageSize">大小</param>
+        /// <param name="count">总条数</param>
+        /// <returns>搬家信息集合</returns>
+        public IList<MoveHouseInfo> GetMoveHouseInfoRecordsBy(string uid, int pageIndex, int pageSize, ref int count)
+        {
+            return mvhDal.GetMoveHouseInfoRecordsBy(uid, pageIndex, pageSize, ref count);
+        }
         /// <summary>
         /// 发布搬家信息
         /// </summary>

@@ -11,8 +11,8 @@ namespace Blowing.MoveHouse.Model.MoveHouse
       #region - feild -
       private string _f_bj_id;
       private string _f_bj_uid;
-      private short _f_isDisplaySex;
-      private short _f_isNeedHelpBj;
+      private int _f_isDisplaySex;
+      private int _f_isNeedHelpBj;
       private decimal _f_bjCostStart;
       private decimal _f_bjCOstEnd;
       private string _f_bjDecription;
@@ -32,11 +32,11 @@ namespace Blowing.MoveHouse.Model.MoveHouse
       /// <summary>
       /// 是否显示性别
       /// </summary>
-      public short F_IsDisplaySex { set { _f_isDisplaySex = value; } get { return _f_isDisplaySex; } }
+      public int F_IsDisplaySex { set { _f_isDisplaySex = value; } get { return _f_isDisplaySex; } }
       /// <summary>
       /// 是否需要搬家
       /// </summary>
-      public short F_IsNeedHelpBj { set { _f_isNeedHelpBj = value; } get { return _f_isNeedHelpBj; } }
+      public int F_IsNeedHelpBj { set { _f_isNeedHelpBj = value; } get { return _f_isNeedHelpBj; } }
       /// <summary>
       /// 最低搬家费用
       /// </summary>

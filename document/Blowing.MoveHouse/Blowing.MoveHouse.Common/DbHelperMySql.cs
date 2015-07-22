@@ -186,9 +186,15 @@ public abstract class DbHelperMySql
     public static DataSet GetDataSet(string connectionString, string cmdText, params MySqlParameter[] commandParameters)
     {
         DataSet retSet = new DataSet();
-        using (MySqlDataAdapter msda = new MySqlDataAdapter(cmdText, connectionString))
+
+        using (MySqlConnection connection = new MySqlConnection(connectionString))
         {
-            msda.Fill(retSet);
+            MySqlCommand cmd = new MySqlCommand();
+            PrepareCommand(cmd, connection, null, cmdText, commandParameters, CommandType.Text);
+            using (MySqlDataAdapter msda = new MySqlDataAdapter(cmd))
+            {
+                msda.Fill(retSet);
+            }
         }
         return retSet;
     }
@@ -248,6 +254,35 @@ public abstract class DbHelperMySql
         if (cmdParms != null)
             foreach (MySqlParameter parm in cmdParms)
                 cmd.Parameters.Add(parm);
+    }
+
+
+    private static void PrepareCommand(MySqlCommand cmd, MySqlConnection conn, MySqlTransaction trans, string cmdText, MySqlParameter[] cmdParms, CommandType commandType)
+    {
+        if (conn.State != ConnectionState.Open)
+        {
+            conn.Open();
+        }
+        cmd.Connection=conn;
+        cmd.CommandText=cmdText;
+        if (trans != null)
+        {
+            cmd.Transaction=trans;
+        }
+        cmd.CommandType=commandType;
+        if (cmdParms != null)
+        {
+            MySqlParameter[] parameterArray = cmdParms;
+            for (int i = 0; i < parameterArray.Length; i = (int)(i + 1))
+            {
+                MySqlParameter parameter = parameterArray[i];
+                if (((parameter.Direction == ParameterDirection.InputOutput) || (parameter.Direction == ParameterDirection.Input)) && (parameter.Value == null))
+                {
+                    parameter.Value=System.DBNull.Value;
+                }
+                cmd.Parameters.Add(parameter);
+            }
+        }
     }
     #region parameters
     /// <summary>
