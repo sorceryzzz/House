@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Blowing.MoveHouse.Model.MoveHouse
 {
-  public class MoveHouseInfo
+  public class MoveHouseInfo:Base
   {
       #region - feild -
       private string _f_bj_id;
@@ -16,8 +16,7 @@ namespace Blowing.MoveHouse.Model.MoveHouse
       private decimal _f_bjCostStart;
       private decimal _f_bjCOstEnd;
       private string _f_bjDecription;
-      private DateTime _f_insertTime;
-      private DateTime _f_updateTime;
+
 
       #endregion
 
@@ -50,14 +49,6 @@ namespace Blowing.MoveHouse.Model.MoveHouse
       /// 描述
       /// </summary>
       public string BjDecription{set{_f_bjDecription=value;}get{return _f_bjDecription;}}
-      /// <summary>
-      /// 记录生成时间
-      /// </summary>
-      public DateTime InsertTime { set { _f_insertTime = value; } get { return _f_insertTime; } }
-      /// <summary>
-      /// 记录更新时间
-      /// </summary>
-      public DateTime UpdateTime { set { _f_updateTime = value; } get { return _f_updateTime; } }
       #endregion
   }
 }
