@@ -2,6 +2,9 @@ F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.WebPoint\bin
 F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.WebPoint\bin\Blowing.MoveHouse.WebPoint.dll
 F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.WebPoint\bin\Blowing.MoveHouse.WebPoint.pdb
 F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.WebPoint\bin\Antlr3.Runtime.dll
+F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.WebPoint\bin\Blowing.MoveHouse.Bll.dll
+F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.WebPoint\bin\Blowing.MoveHouse.Common.dll
+F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.WebPoint\bin\Blowing.MoveHouse.Model.dll
 F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.WebPoint\bin\Microsoft.Web.Infrastructure.dll
 F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.WebPoint\bin\Newtonsoft.Json.dll
 F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.WebPoint\bin\System.Web.Helpers.dll
@@ -12,6 +15,10 @@ F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.WebPoint\bin
 F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.WebPoint\bin\System.Web.WebPages.dll
 F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.WebPoint\bin\System.Web.WebPages.Razor.dll
 F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.WebPoint\bin\WebGrease.dll
+F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.WebPoint\bin\Blowing.MoveHouse.Dal.dll
+F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.WebPoint\bin\Blowing.MoveHouse.Bll.pdb
+F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.WebPoint\bin\Blowing.MoveHouse.Common.pdb
+F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.WebPoint\bin\Blowing.MoveHouse.Model.pdb
 F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.WebPoint\bin\System.Web.Helpers.xml
 F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.WebPoint\bin\System.Web.Mvc.xml
 F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.WebPoint\bin\System.Web.Optimization.xml
@@ -21,6 +28,7 @@ F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.WebPoint\bin
 F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.WebPoint\bin\System.Web.WebPages.Razor.xml
 F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.WebPoint\bin\Antlr3.Runtime.pdb
 F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.WebPoint\bin\Newtonsoft.Json.xml
+F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.WebPoint\bin\Blowing.MoveHouse.Dal.pdb
 F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.WebPoint\bin\zh-Hans\System.Web.Helpers.resources.dll
 F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.WebPoint\bin\zh-Hans\System.Web.Mvc.resources.dll
 F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.WebPoint\bin\zh-Hans\System.Web.Optimization.resources.dll

@@ -1,0 +1,9 @@
+F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.Dal\bin\Debug\Blowing.MoveHouse.Dal.dll
+F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.Dal\bin\Debug\Blowing.MoveHouse.Dal.pdb
+F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.Dal\bin\Debug\Blowing.MoveHouse.Common.dll
+F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.Dal\bin\Debug\Blowing.MoveHouse.Model.dll
+F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.Dal\bin\Debug\Blowing.MoveHouse.Common.pdb
+F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.Dal\bin\Debug\Blowing.MoveHouse.Model.pdb
+F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.Dal\obj\Debug\Blowing.MoveHouse.Dal.csprojResolveAssemblyReference.cache
+F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.Dal\obj\Debug\Blowing.MoveHouse.Dal.dll
+F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.Dal\obj\Debug\Blowing.MoveHouse.Dal.pdb

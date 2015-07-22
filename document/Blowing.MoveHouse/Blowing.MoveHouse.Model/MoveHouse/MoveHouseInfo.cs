@@ -28,27 +28,27 @@ namespace Blowing.MoveHouse.Model.MoveHouse
       /// <summary>
       /// 用户ID
       /// </summary>
-      public string F_Bj_UID { set { _f_bj_id = value; } get { return _f_bj_uid; } }
+      public string F_Bj_UID { set { _f_bj_uid = value; } get { return _f_bj_uid; } }
       /// <summary>
       /// 是否显示性别
       /// </summary>
-      public short IsDisplaySex { set { _f_isDisplaySex = value; } get { return _f_isDisplaySex; } }
+      public short F_IsDisplaySex { set { _f_isDisplaySex = value; } get { return _f_isDisplaySex; } }
       /// <summary>
       /// 是否需要搬家
       /// </summary>
-      public short IsNeedHelpBj { set { _f_isNeedHelpBj = value; } get { return _f_isNeedHelpBj; } }
+      public short F_IsNeedHelpBj { set { _f_isNeedHelpBj = value; } get { return _f_isNeedHelpBj; } }
       /// <summary>
       /// 最低搬家费用
       /// </summary>
-      public decimal BjCostStart{set{_f_bjCostStart=value;}get{return _f_bjCostStart;}}
+      public decimal F_BjCostStart{set{_f_bjCostStart=value;}get{return _f_bjCostStart;}}
       /// <summary>
       /// 最高搬家费用
       /// </summary>
-      public decimal BjCostEnd { set { _f_bjCOstEnd = value; } get { return _f_bjCOstEnd; } }
+      public decimal F_BjCostEnd { set { _f_bjCOstEnd = value; } get { return _f_bjCOstEnd; } }
       /// <summary>
       /// 描述
       /// </summary>
-      public string BjDecription{set{_f_bjDecription=value;}get{return _f_bjDecription;}}
+      public string F_BjDecription{set{_f_bjDecription=value;}get{return _f_bjDecription;}}
       #endregion
   }
 }

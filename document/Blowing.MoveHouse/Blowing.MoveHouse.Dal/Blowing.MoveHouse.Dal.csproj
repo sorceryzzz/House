@@ -30,6 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.6.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,8 +40,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="MoveHouse\MoveHouseDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Blowing.MoveHouse.Common\Blowing.MoveHouse.Common.csproj">
+      <Project>{f2a5d50e-e6c2-40ae-8019-df530407ca52}</Project>
+      <Name>Blowing.MoveHouse.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Blowing.MoveHouse.Model\Blowing.MoveHouse.Model.csproj">
+      <Project>{2c655300-280d-49eb-a2f3-ca00955b6efb}</Project>
+      <Name>Blowing.MoveHouse.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

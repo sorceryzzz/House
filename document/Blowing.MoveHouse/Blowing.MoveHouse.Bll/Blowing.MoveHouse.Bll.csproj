@@ -39,8 +39,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="MoveHouse\MoveHouseInfoBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Blowing.MoveHouse.Dal\Blowing.MoveHouse.Dal.csproj">
+      <Project>{e338f170-a8b2-4b53-95d8-9dac32d3564c}</Project>
+      <Name>Blowing.MoveHouse.Dal</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Blowing.MoveHouse.Model\Blowing.MoveHouse.Model.csproj">
+      <Project>{2c655300-280d-49eb-a2f3-ca00955b6efb}</Project>
+      <Name>Blowing.MoveHouse.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

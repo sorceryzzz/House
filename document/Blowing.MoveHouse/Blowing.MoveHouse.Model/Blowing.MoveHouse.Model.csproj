@@ -39,6 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MoveHouse\Base.cs" />
+    <Compile Include="MoveHouse\CarTypeInfo.cs" />
     <Compile Include="MoveHouse\MoveHouseInfo.cs" />
     <Compile Include="MoveHouse\MoveHousePerson.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
