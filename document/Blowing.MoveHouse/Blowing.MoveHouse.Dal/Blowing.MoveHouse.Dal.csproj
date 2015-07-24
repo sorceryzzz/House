@@ -40,7 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MoveHouse\MoveHouseDal.cs" />
+    <Compile Include="MoveHouse\MvhInfoDal.cs" />
+    <Compile Include="MoveHouse\MvhSpcPersonDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

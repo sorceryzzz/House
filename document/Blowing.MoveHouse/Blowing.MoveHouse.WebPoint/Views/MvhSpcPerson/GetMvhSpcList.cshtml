@@ -1,0 +1,55 @@
+﻿@using Blowing.MoveHouse.Model;
+@using Blowing.MoveHouse.Model.MoveHouse;
+
+
+@model List<MvhSpcPersonModel>
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<div id="MvhInfoListBody">
+    <div class="main2 borH bgW">
+        <div class="min_400">
+            <table class="pct100 credittable" cellpadding="0" cellspacing="0">
+                <tr class="bghover lh50">
+                    <th width="35%">发布人</th>
+                    <th>性别</th>
+                    <th width="21%">车型</th>
+                    <th width="21%">最低支付</th>
+                    <th width="21%">最高支付</th>
+                    <th width="15%">描述</th>
+                </tr>
+                @foreach (MvhSpcPersonModel mvhSpcModel in Model)
+                {
+                    <tr>
+                        <td>@mvhSpcModel.F_Bjp_UID</td>
+                        <td>@mvhSpcModel.F_BjpCarTypeID</td>
+                        <td>@mvhSpcModel.F_BjpCostStart</td>
+                        <td>@mvhSpcModel.F_BjpCostEnd</td>
+                        <td>@mvhSpcModel.F_BjpDecription</td>
+                    </tr>
+                }
+            </table>
+        </div>
+        <div class="pagecompus tc pt20 pb20">
+            @Html.Partial("page", (ViewDataDictionary)ViewBag.dataDictionary)
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+ $(function () {
+     GetMvhSpcList(1);
+ });
+
+ //获取积分明细信息
+ function GetMvhSpcList(pageIndex) {
+            $.ajax({
+                url: '/MoveHouse/GetMvhSpcList?pageIndex=' + pageIndex + "&pageSize=10",
+                type: 'GET',
+                success: function (data) {
+
+                    $("#MvhInfoListBody").html(data);
+                }
+            });
+}
+     
+</script>

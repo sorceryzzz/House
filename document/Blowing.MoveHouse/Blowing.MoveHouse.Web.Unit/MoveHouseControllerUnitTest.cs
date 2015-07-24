@@ -16,15 +16,15 @@ namespace Blowing.MoveHouse.Web.Unit
         [TestMethod]
         public void PublishMvhInfo()
         {
+
+            MvhInfoController mvhController = new MvhInfoController();
+
             for (int i = 0; i < 100; i++)
             {
-                MoveHouseController mvhController = new MoveHouseController();
-
                 var o = mvhController.PublishMvhInfo("000000000000000000", 0, 0, 100, 200, "20多个小包，已打包好");
                 int result = int.Parse(o.Content);
                 Assert.AreEqual(result > 0, true);
             }
-
         }
     }
 }

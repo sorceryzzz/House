@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Blowing.MoveHouse.Model.MoveHouse
 {
-  public  class CarTypeInfo:Base
+  public  class CarTypeInfoModel:BaseModel
   {
       #region - feild-
       private int _f_id;

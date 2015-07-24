@@ -55,6 +55,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="MoveHouseControllerUnitTest.cs" />
+    <Compile Include="MvhSpcControllerUniTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

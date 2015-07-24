@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace Blowing.MoveHouse.Bll.MoveHouse
 {
-   public  class MoveHouseInfoBll
+   public  class MvhInfoBll
     {
 
-        MoveHouseDal mvhDal = new MoveHouseDal();
+        MvhInfoDal mvhDal = new MvhInfoDal();
 
-        public MoveHouseInfoBll() { }
+        public MvhInfoBll() { }
 
 
         #region - method -
@@ -26,16 +26,16 @@ namespace Blowing.MoveHouse.Bll.MoveHouse
         /// <param name="pageSize">大小</param>
         /// <param name="count">总条数</param>
         /// <returns>搬家信息集合</returns>
-        public IList<MoveHouseInfo> GetMoveHouseInfoRecordsBy(string uid, int pageIndex, int pageSize, ref int count)
+        public IList<MvhInfoModel> GetMvhInfoRecordsBy(string uid, int pageIndex, int pageSize, ref int count)
         {
-            return mvhDal.GetMoveHouseInfoRecordsBy(uid, pageIndex, pageSize, ref count);
+            return mvhDal.GetMvhInfoRecordsBy(uid, pageIndex, pageSize, ref count);
         }
         /// <summary>
         /// 发布搬家信息
         /// </summary>
         /// <param name="mvhInfo">搬家信息实体</param>
         /// <returns>影响行数</returns>
-       public int InsertMvhInfo(MoveHouseInfo mvhInfo)
+       public int InsertMvhInfo(MvhInfoModel mvhInfo)
        {
            return mvhDal.InsertMvhInfo(mvhInfo);
        }

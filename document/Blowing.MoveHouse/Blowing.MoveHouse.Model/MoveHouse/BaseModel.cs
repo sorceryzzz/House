@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Blowing.MoveHouse.Model.MoveHouse
 {
-   public class Base
+   public class BaseModel
    {
        #region - feild -
        private DateTime _f_insertTime;

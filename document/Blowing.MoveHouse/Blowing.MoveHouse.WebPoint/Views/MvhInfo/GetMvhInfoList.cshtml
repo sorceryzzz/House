@@ -2,12 +2,11 @@
 @using Blowing.MoveHouse.Model.MoveHouse;
 
 
-@model List<MoveHouseInfo>
+@model List<MvhInfoModel>
 <script src="~/Scripts/jquery-1.10.2.js"></script>
 <div id="MvhInfoListBody">
     <div class="main2 borH bgW">
-        <div class="pl20 F16 bbH pt15 pb15"><span class="r F14">时间段：<select class="mr10"><option>2015年01月01日</option></select>—<select class="ml10"><option>2015年01月01日</option></select><a class="btn">确定</a></span><span class="contest_title">积分明细</span></div>
-        <div class="min_400">
+         <div class="min_400">
             <table class="pct100 credittable" cellpadding="0" cellspacing="0">
                 <tr class="bghover lh50">
                     <th width="35%">发布人</th>
@@ -17,7 +16,7 @@
                     <th width="21%">最高支付</th>
                     <th width="15%">描述</th>
                 </tr>
-                @foreach (MoveHouseInfo mvhModel in Model)
+                @foreach (MvhInfoModel mvhModel in Model)
                 {
                     <tr>
                         <td>@mvhModel.F_Bj_UID</td>
@@ -36,22 +35,20 @@
 
     </div>
 </div>
-</div>
-    <script type="text/javascript">
-        $(function () {
-            GetMvhInfoList(1);
+<script type="text/javascript">
+    $(function () {
+        GetMvhInfoList(1);
+    });
+    //获取积分明细信息
+    function GetMvhInfoList(pageIndex) {
+        $.ajax({
+            url: '/MoveHouse/GetMvhInfoList?pageIndex=' + pageIndex + "&pageSize=10",
+            type: 'GET',
+            success: function (data) {
+
+                $("#MvhInfoListBody").html(data);
+
+            }
         });
-        //获取积分明细信息
-        function GetMvhInfoList(pageIndex) {
-
-            $.ajax({
-                url: '/MoveHouse/GetMvhInfoList?pageIndex=' + pageIndex + "&pageSize=10",
-                type: 'GET',
-                success: function (data) {
-
-                    $("#MvhInfoListBody").html(data);
-                    bindDateTimePlugin();
-                }
-            });
-        }
-    
+    }
+</script>  

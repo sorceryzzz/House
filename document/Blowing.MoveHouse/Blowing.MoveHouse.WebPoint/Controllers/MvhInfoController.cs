@@ -8,10 +8,10 @@ using System.Web.Mvc;
 
 namespace Blowing.MoveHouse.WebPoint.Controllers
 {
-    public class MoveHouseController : Controller
+    public class MvhInfoController : Controller
     {
 
-        MoveHouseInfoBll mvhInfoBll = new MoveHouseInfoBll();
+        MvhInfoBll mvhInfoBll = new MvhInfoBll();
         // GET: MoveHouse
         public ActionResult Index()
         {
@@ -32,7 +32,7 @@ namespace Blowing.MoveHouse.WebPoint.Controllers
    
             #region - 查询分页数据 -
 
-            IList<MoveHouseInfo> mvhInfoList = mvhInfoBll.GetMoveHouseInfoRecordsBy(uid, pageIndex, pageSize, ref count);
+            IList<MvhInfoModel> mvhInfoList = mvhInfoBll.GetMvhInfoRecordsBy(uid, pageIndex, pageSize, ref count);
 
             ViewDataDictionary dataDictionary = new ViewDataDictionary
             {
@@ -62,8 +62,8 @@ namespace Blowing.MoveHouse.WebPoint.Controllers
 
             #region - paras -
           
-            MoveHouseInfo mvhInfoModel = new MoveHouseInfo();
-            mvhInfoModel.F_Bj_ID = System.Guid.NewGuid().ToString();
+            MvhInfoModel mvhInfoModel = new MvhInfoModel();
+           // mvhInfoModel.F_Bj_ID = ;
             mvhInfoModel.F_Bj_UID = F_Bj_UID;
             mvhInfoModel.F_IsDisplaySex = F_IsDisplaySex;
             mvhInfoModel.F_IsNeedHelpBj = F_IsNeedHelpBj;

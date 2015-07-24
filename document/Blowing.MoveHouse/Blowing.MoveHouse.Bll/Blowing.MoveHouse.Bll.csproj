@@ -39,7 +39,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MoveHouse\MoveHouseInfoBll.cs" />
+    <Compile Include="MoveHouse\MvhInfoBll.cs" />
+    <Compile Include="MoveHouse\MvhSpcBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

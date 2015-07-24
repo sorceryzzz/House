@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Blowing.MoveHouse.Model.MoveHouse
 {
-  public class MoveHouseInfo:Base
+  public class MvhInfoModel:BaseModel
   {
       #region - feild -
-      private string _f_bj_id;
+      private int _f_bj_id;
       private string _f_bj_uid;
       private int _f_isDisplaySex;
       private int _f_isNeedHelpBj;
@@ -24,7 +24,7 @@ namespace Blowing.MoveHouse.Model.MoveHouse
       /// <summary>
       /// 主键
       /// </summary>
-      public string F_Bj_ID { set { _f_bj_id = value; } get { return _f_bj_id; } }
+      public int F_Bj_ID { set { _f_bj_id = value; } get { return _f_bj_id; } }
       /// <summary>
       /// 用户ID
       /// </summary>

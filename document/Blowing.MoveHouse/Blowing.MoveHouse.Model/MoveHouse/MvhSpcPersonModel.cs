@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace Blowing.MoveHouse.Model.MoveHouse
 {
-    public class MoveHousePerson : Base
+    public class MvhSpcPersonModel : BaseModel
    {
        #region - feild -
-       private string _f_bjp_id;
+        private int _f_bjp_id;
        private string _f_bjp_uid;
        private int _f_bjpcartypeid;
        private decimal _f_bjpCostStart;
        private decimal _f_bjpCostEnd;
+       private string _f_bjpDecription;
   
        #endregion
 
@@ -21,7 +22,7 @@ namespace Blowing.MoveHouse.Model.MoveHouse
        /// <summary>
        /// 主键
        /// </summary>
-       public string F_Bjp_ID { set { _f_bjp_id = value; } get { return _f_bjp_id; } }
+       public int F_Bjp_ID { set { _f_bjp_id = value; } get { return _f_bjp_id; } }
       /// <summary>
       /// 用户ID
       /// </summary>
@@ -38,7 +39,10 @@ namespace Blowing.MoveHouse.Model.MoveHouse
       /// 最高费用
       /// </summary>
        public decimal F_BjpCostEnd { set { _f_bjpCostEnd = value; } get { return _f_bjpCostEnd; } }
- 
+        /// <summary>
+        /// 描述
+        /// </summary>
+       public string F_BjpDecription { set { _f_bjpDecription = value; } get { return _f_bjpDecription; } }
        #endregion
 
    }

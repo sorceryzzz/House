@@ -39,7 +39,7 @@ SELECT COUNT(mvhInfo.f_Bj_ID)
 FROM `movehouse`.`movehouseinfo` AS mvhInfo
  
  
- --
+ --搬家专人插入
  INSERT INTO `movehouse`.`movehousepersoninfo`
             (`f_Bjp_ID`,
              `f_Bjp_UID`,
@@ -60,7 +60,27 @@ VALUES ('f_Bjp_ID',
         'avg1',
         'avg2');
  
- 
+ --查询搬家专人信息
+ SELECT
+  `f_Bjp_ID`,
+  `f_Bjp_UID`,
+  `f_BjpCarTypeID`,
+  `f_BjpCostStart`,
+  `f_BjpCostEnd`,
+  `f_InsertTime`,
+  `f_UpdateTime`,
+  `avg1`,
+  `avg2`
+FROM `movehouse`.`movehousepersoninfo` AS mvhspc
+WHERE
+ (MvhSpc.f_Bjp_ID >=(
+                      SELECT MAX(MvhSpc.f_Bjp_ID) FROM (
+                                        SELECT mvhspcA.f_Bjp_ID FROM `movehouse`.`movehousepersoninfo` AS mvhspcA ORDER BY mvhA.f_bj_id LIMIT 0,1) AS tmp
+                                    ) )
+                             ORDER BY mvhspc.f_Bjp_ID ASC      
+                             LIMIT 10;
+                             
+ --查询搬家专人信息总数
  
  
  

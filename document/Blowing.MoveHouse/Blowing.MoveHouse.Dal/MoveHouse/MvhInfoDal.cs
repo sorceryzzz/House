@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace Blowing.MoveHouse.Dal.MoveHouse
 {
-    public class MoveHouseDal
+    public class MvhInfoDal
     {
 
-        public MoveHouseDal() { }
+        public MvhInfoDal() { }
 
         #region - method -
         /// <summary>
@@ -24,19 +24,19 @@ namespace Blowing.MoveHouse.Dal.MoveHouse
         /// <param name="pageSize">大小</param>
         /// <param name="count">总条数</param>
         /// <returns>搬家信息集合</returns>
-        public IList<MoveHouseInfo> GetMoveHouseInfoRecordsBy(string uid,int pageIndex,int pageSize,ref int count)
+        public IList<MvhInfoModel> GetMvhInfoRecordsBy(string uid,int pageIndex,int pageSize,ref int count)
         {
 
-            IList<MoveHouseInfo> mvhInfoList = null;
+            IList<MvhInfoModel> mvhInfoList = null;
 
             pageIndex = pageSize * (pageIndex - 1);
             #region - sql qy -
             string sqlCountQy = @"SELECT COUNT(mvhInfo.f_Bj_ID)
-                                  FROM `movehouse`.`movehouseinfo` AS mvhInfo ";
+                                  FROM `movehouse`.`MvhInfo` AS mvhInfo ";
 
             string sqlPageQy = @"SELECT mvhInfo.f_Bj_ID,mvhInfo.f_Bj_UID,mvhInfo.f_IsDiplaySex,mvhInfo.f_IsDiplaySex,mvhInfo.f_IsNeedHelpBj,f_BjCostsStart,
                                     mvhInfo.f_BjCostEnd, mvhInfo.f_BjDecription,mvhInfo.f_InsertTime,mvhInfo.f_UpdateTime
-                             FROM `movehouse`.`movehouseinfo` AS mvhInfo ";
+                             FROM `movehouse`.`MvhInfo` AS mvhInfo ";
 
             StringBuilder sbWhereStr=new StringBuilder();
             sbWhereStr.Append("WHERE mvhInfo.f_Bj_UID=@UID ");
@@ -45,7 +45,7 @@ namespace Blowing.MoveHouse.Dal.MoveHouse
 
             sbWhereStr.Append(@" AND (mvhInfo.f_bj_id >=(
                                     SELECT MAX(mvhInfo.f_bj_id) FROM (
-                                        SELECT mvhA.f_bj_id FROM `movehouse`.`movehouseinfo` AS mvhA ORDER BY mvhA.f_bj_id LIMIT @PageIndex,1) AS tmp
+                                        SELECT mvhA.f_bj_id FROM `movehouse`.`MvhInfo` AS mvhA ORDER BY mvhA.f_bj_id LIMIT @PageIndex,1) AS tmp
                                     ) )
                              ORDER BY mvhInfo.f_bj_id ASC      
                              LIMIT @PageSize;");
@@ -72,10 +72,10 @@ namespace Blowing.MoveHouse.Dal.MoveHouse
                 DataTable dataTable = DbHelperMySql.GetDataSet(DbHelperMySql.connectionStringManager, sqlPageQy, paras).Tables[0];
                 if (dataTable != null)
                 {
-                    mvhInfoList = new List<MoveHouseInfo>();
+                    mvhInfoList = new List<MvhInfoModel>();
                     foreach (DataRow row in dataTable.Rows)
                     {
-                        mvhInfoList.Add(TransMoveHouseInfo(row));
+                        mvhInfoList.Add(TransMvhInfo(row));
                     }
                 }
             }
@@ -92,13 +92,13 @@ namespace Blowing.MoveHouse.Dal.MoveHouse
         /// </summary>
         /// <param name="mvhInfo">搬家信息实体</param>
         /// <returns>影响行数</returns>
-        public int InsertMvhInfo(MoveHouseInfo mvhInfo)
+        public int InsertMvhInfo(MvhInfoModel mvhInfo)
         {
             int resultInt = 0;
 
             #region - sql qy -
-            string sqlQy = @"INSERT INTO `movehouse`.`movehouseinfo`
-            (                   `f_Bj_ID`,
+            string sqlQy = @"INSERT INTO `movehouse`.`MvhInfo`
+            (                   
                                 `f_Bj_UID`,
                                 `f_IsDiplaySex`,
                                 `f_IsNeedHelpBj`,
@@ -109,7 +109,7 @@ namespace Blowing.MoveHouse.Dal.MoveHouse
                                 `f_UpdateTime`,
                                 `avg1`,
                                 `avg2`)
-                             VALUES (@f_Bj_ID,
+                             VALUES (
                                  @f_Bj_UID,
                                  @f_IsDiplaySex,
                                  @f_IsNeedHelpBj,
@@ -126,7 +126,7 @@ namespace Blowing.MoveHouse.Dal.MoveHouse
 
             MySqlParameter[] paras = 
            {
-               new MySqlParameter("@f_Bj_ID",mvhInfo.F_Bj_ID),
+              
                new MySqlParameter("@f_Bj_UID",mvhInfo.F_Bj_UID),
                new MySqlParameter("@f_IsDiplaySex",mvhInfo.F_IsDisplaySex),
                new MySqlParameter("@f_IsNeedHelpBj",mvhInfo.F_IsNeedHelpBj),
@@ -163,10 +163,10 @@ namespace Blowing.MoveHouse.Dal.MoveHouse
         /// </summary>
         /// <param name="row">数据项</param>
         /// <returns>MoveHouesInfo实体</returns>
-        public MoveHouseInfo TransMoveHouseInfo(DataRow row)
+        public MvhInfoModel TransMvhInfo(DataRow row)
         {
-            MoveHouseInfo mvhInfo = new MoveHouseInfo();
-            mvhInfo.F_Bj_ID = row["f_bj_id"] != null ? row["f_bj_id"].ToString() : string.Empty;
+            MvhInfoModel mvhInfo = new MvhInfoModel();
+            mvhInfo.F_Bj_ID = row["f_bj_id"] != null ? Convert.ToInt32(row["f_bj_id"]) : 0;
             mvhInfo.F_Bj_UID = row["f_bj_id"] != null ? row["f_bj_id"].ToString() : string.Empty;
             mvhInfo.F_IsDisplaySex = row["f_IsDiplaySex"] != null ? Convert.ToInt32(row["f_IsDiplaySex"]) : 0;
             mvhInfo.F_IsNeedHelpBj = row["f_IsNeedHelpBj"] != null ? Convert.ToInt32(row["f_IsNeedHelpBj"]) : 0;
