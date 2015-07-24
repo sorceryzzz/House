@@ -35,7 +35,8 @@ ORDER BY mvhInfo.f_id ASC
 LIMIT 10;
  
  --搬家信息总数
- 
+SELECT COUNT(mvhInfo.f_Bj_ID)
+FROM `movehouse`.`movehouseinfo` AS mvhInfo
  
  
  --
