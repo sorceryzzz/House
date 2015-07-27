@@ -21,7 +21,7 @@ namespace Blowing.MoveHouse.Web.Unit
 
             for (int i = 0; i < 100; i++)
             {
-                var o = mvhController.PublishMvhInfo("000000000000000000", 0, 0, 100, 200, "20多个小包，已打包好");
+                var o = mvhController.PublishMvhInfo("搬家","000000000000000000", 0, 0, 100, 200, "20多个小包，已打包好");
                 int result = int.Parse(o.Content);
                 Assert.AreEqual(result > 0, true);
             }

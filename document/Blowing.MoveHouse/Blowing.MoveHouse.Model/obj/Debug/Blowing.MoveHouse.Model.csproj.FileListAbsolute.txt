@@ -2,3 +2,4 @@ F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.Model\bin\De
 F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.Model\bin\Debug\Blowing.MoveHouse.Model.pdb
 F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.Model\obj\Debug\Blowing.MoveHouse.Model.dll
 F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.Model\obj\Debug\Blowing.MoveHouse.Model.pdb
+F:\WorkSpace\NET\House\document\Blowing.MoveHouse\Blowing.MoveHouse.Model\obj\Debug\Blowing.MoveHouse.Model.csprojResolveAssemblyReference.cache

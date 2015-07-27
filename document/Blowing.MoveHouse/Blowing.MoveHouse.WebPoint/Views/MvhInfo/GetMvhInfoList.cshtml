@@ -3,52 +3,61 @@
 
 
 @model List<MvhInfoModel>
-<script src="~/Scripts/jquery-1.10.2.js"></script>
-<div id="MvhInfoListBody">
-    <div class="main2 borH bgW">
-         <div class="min_400">
-            <table class="pct100 credittable" cellpadding="0" cellspacing="0">
-                <tr class="bghover lh50">
-                    <th width="35%">发布人</th>
-                    <th>性别</th>
-                    <th width="21%">需要搬家</th>
-                    <th width="21%">最低支付</th>
-                    <th width="21%">最高支付</th>
-                    <th width="15%">描述</th>
-                </tr>
-                @foreach (MvhInfoModel mvhModel in Model)
-                {
-                    <tr>
-                        <td>@mvhModel.F_Bj_UID</td>
-                        <td>@mvhModel.F_IsDisplaySex</td>
-                        <td>@mvhModel.F_IsNeedHelpBj</td>
-                        <td>@mvhModel.F_BjCostStart</td>
-                        <td>@mvhModel.F_BjCostEnd</td>
-                        <td>@mvhModel.F_BjDecription</td>
-                    </tr>
-                }
-            </table>
-        </div>
-        <div class="pagecompus tc pt20 pb20">
-            @Html.Partial("page", (ViewDataDictionary)ViewBag.dataDictionary)
-        </div>
 
-    </div>
+<div class="hero-unit">
+    <h1>发布搬家信息</h1>
+    <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+    <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
 </div>
-<script type="text/javascript">
-    $(function () {
-        GetMvhInfoList(1);
-    });
-    //获取积分明细信息
-    function GetMvhInfoList(pageIndex) {
-        $.ajax({
-            url: '/MoveHouse/GetMvhInfoList?pageIndex=' + pageIndex + "&pageSize=10",
-            type: 'GET',
-            success: function (data) {
+<div class="row-fluid">
 
-                $("#MvhInfoListBody").html(data);
-
-            }
-        });
+    @foreach (MvhInfoModel mvhModel in Model)
+    {
+        <div class="span4">
+            <h2>标题</h2>
+            <p>@mvhModel.F_BjDecription</p>
+            <p><a class="btn" href="#">查看详情</a></p>
+            @*<td>@mvhModel.F_Bj_UID</td>
+            <td>@mvhModel.F_IsDisplaySex</td>
+            <td>@mvhModel.F_IsNeedHelpBj</td>
+            <td>@mvhModel.F_BjCostStart</td>
+            <td>@mvhModel.F_BjCostEnd</td>
+            <td></td>*@
+        </div><!--/row-->
     }
-</script>  
+</div>
+
+<div class="pagecompus tc pt20 pb20">
+    @Html.Partial("page", (ViewDataDictionary)ViewBag.dataDictionary)
+</div>
+
+
+@*<div id="MvhInfoListBody">
+        <div class="main2 borH bgW">
+             <div class="min_400">
+                <table class="pct100 credittable" cellpadding="0" cellspacing="0">
+                    <tr class="bghover lh50">
+                        <th width="35%">发布人</th>
+                        <th>性别</th>
+                        <th width="21%">需要搬家</th>
+                        <th width="21%">最低支付</th>
+                        <th width="21%">最高支付</th>
+                        <th width="15%">描述</th>
+                    </tr>
+                    @foreach (MvhInfoModel mvhModel in Model)
+                    {
+                        <tr>
+                            <td>@mvhModel.F_Bj_UID</td>
+                            <td>@mvhModel.F_IsDisplaySex</td>
+                            <td>@mvhModel.F_IsNeedHelpBj</td>
+                            <td>@mvhModel.F_BjCostStart</td>
+                            <td>@mvhModel.F_BjCostEnd</td>
+                            <td>@mvhModel.F_BjDecription</td>
+                        </tr>
+                    }
+                </table>
+            </div>
+
+
+        </div>
+    </div>*@

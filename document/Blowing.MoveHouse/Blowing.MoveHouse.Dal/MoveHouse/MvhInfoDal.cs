@@ -34,7 +34,7 @@ namespace Blowing.MoveHouse.Dal.MoveHouse
             string sqlCountQy = @"SELECT COUNT(mvhInfo.f_Bj_ID)
                                   FROM `movehouse`.`MvhInfo` AS mvhInfo ";
 
-            string sqlPageQy = @"SELECT mvhInfo.f_Bj_ID,mvhInfo.f_Bj_UID,mvhInfo.f_IsDiplaySex,mvhInfo.f_IsDiplaySex,mvhInfo.f_IsNeedHelpBj,f_BjCostsStart,
+            string sqlPageQy = @"SELECT mvhInfo.f_Bj_ID,mvhInfo.f_Bj_Title,mvhInfo.f_Bj_UID,mvhInfo.f_IsDiplaySex,mvhInfo.f_IsDiplaySex,mvhInfo.f_IsNeedHelpBj,f_BjCostsStart,
                                     mvhInfo.f_BjCostEnd, mvhInfo.f_BjDecription,mvhInfo.f_InsertTime,mvhInfo.f_UpdateTime
                              FROM `movehouse`.`MvhInfo` AS mvhInfo ";
 
@@ -100,6 +100,7 @@ namespace Blowing.MoveHouse.Dal.MoveHouse
             string sqlQy = @"INSERT INTO `movehouse`.`MvhInfo`
             (                   
                                 `f_Bj_UID`,
+                                `f_Bj_Title`,
                                 `f_IsDiplaySex`,
                                 `f_IsNeedHelpBj`,
                                 `f_BjCostsStart`,
@@ -111,6 +112,7 @@ namespace Blowing.MoveHouse.Dal.MoveHouse
                                 `avg2`)
                              VALUES (
                                  @f_Bj_UID,
+                                 @f_Bj_Title,
                                  @f_IsDiplaySex,
                                  @f_IsNeedHelpBj,
                                  @f_BjCostsStart,
@@ -126,8 +128,8 @@ namespace Blowing.MoveHouse.Dal.MoveHouse
 
             MySqlParameter[] paras = 
            {
-              
                new MySqlParameter("@f_Bj_UID",mvhInfo.F_Bj_UID),
+                new MySqlParameter("@f_Bj_Title",mvhInfo.F_Bj_Title),
                new MySqlParameter("@f_IsDiplaySex",mvhInfo.F_IsDisplaySex),
                new MySqlParameter("@f_IsNeedHelpBj",mvhInfo.F_IsNeedHelpBj),
                new MySqlParameter("@f_BjCostsStart",mvhInfo.F_BjCostStart),

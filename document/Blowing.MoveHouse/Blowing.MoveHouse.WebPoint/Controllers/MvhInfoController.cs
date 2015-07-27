@@ -56,14 +56,14 @@ namespace Blowing.MoveHouse.WebPoint.Controllers
         /// <param name="F_BjDecription"></param>
         /// <returns></returns>
         [HttpPost]
-        public ContentResult PublishMvhInfo( string F_Bj_UID, short F_IsDisplaySex, short F_IsNeedHelpBj, decimal F_BjCostStart, decimal F_BjCostEnd, string F_BjDecription)
+        public ContentResult PublishMvhInfo( string F_Bj_Titile,string F_Bj_UID, short F_IsDisplaySex, short F_IsNeedHelpBj, decimal F_BjCostStart, decimal F_BjCostEnd, string F_BjDecription)
         {
             int resultInt = 0;
 
             #region - paras -
           
             MvhInfoModel mvhInfoModel = new MvhInfoModel();
-           // mvhInfoModel.F_Bj_ID = ;
+            mvhInfoModel.F_Bj_Title = F_Bj_Titile;
             mvhInfoModel.F_Bj_UID = F_Bj_UID;
             mvhInfoModel.F_IsDisplaySex = F_IsDisplaySex;
             mvhInfoModel.F_IsNeedHelpBj = F_IsNeedHelpBj;

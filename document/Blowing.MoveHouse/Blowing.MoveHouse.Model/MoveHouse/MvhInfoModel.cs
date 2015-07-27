@@ -10,12 +10,14 @@ namespace Blowing.MoveHouse.Model.MoveHouse
   {
       #region - feild -
       private int _f_bj_id;
+      private string _f_Bj_Title;
       private string _f_bj_uid;
       private int _f_isDisplaySex;
       private int _f_isNeedHelpBj;
       private decimal _f_bjCostStart;
       private decimal _f_bjCOstEnd;
       private string _f_bjDecription;
+     
 
 
       #endregion
@@ -25,6 +27,10 @@ namespace Blowing.MoveHouse.Model.MoveHouse
       /// 主键
       /// </summary>
       public int F_Bj_ID { set { _f_bj_id = value; } get { return _f_bj_id; } }
+      /// <summary>
+      /// 标题
+      /// </summary>
+      public string F_Bj_Title { set { _f_Bj_Title = value; } get { return _f_Bj_Title; } }
       /// <summary>
       /// 用户ID
       /// </summary>
