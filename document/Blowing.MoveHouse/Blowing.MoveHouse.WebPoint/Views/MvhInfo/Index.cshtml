@@ -7,8 +7,8 @@
     <div class="well sidebar-nav">
         <ul class="nav nav-list">
             <li class="nav-header">Sidebar</li>
-            <li class="active"><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
+            <li class="active"><a href="#">搬家信息浏览</a></li>
+            <li><a href="#">搬家信息发布</a></li>
             <li><a href="#">Link</a></li>
             <li><a href="#">Link</a></li>
             <li class="nav-header">Sidebar</li>
@@ -43,9 +43,10 @@
         //获取积分明细信息
         function GetMvhInfoList(pageIndex) {
             $.ajax({
-                url: '/MvhInfo/GetMvhInfoList?pageIndex=' + pageIndex + "&pageSize=10&startTime=",
+                url: '/MvhInfo/GetMvhInfoList?pageIndex=' + pageIndex + "&pageSize=12&startTime=",
                 type: 'GET',
                 success: function (data) {
+                    $("#MvhInfoListBody").html("");
                     $("#MvhInfoListBody").html(data);
                 }
             });

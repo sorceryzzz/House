@@ -9,11 +9,13 @@
     <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
     <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
 </div>
+
+<div>
 <div class="row-fluid">
 
     @foreach (MvhInfoModel mvhModel in Model)
     {
-        <div class="span4">
+        <div class="span3">
             <h2>标题</h2>
             <p>@mvhModel.F_BjDecription</p>
             <p><a class="btn" href="#">查看详情</a></p>
@@ -27,10 +29,12 @@
     }
 </div>
 
+
 <div class="pagecompus tc pt20 pb20">
     @Html.Partial("page", (ViewDataDictionary)ViewBag.dataDictionary)
 </div>
 
+</div>
 
 @*<div id="MvhInfoListBody">
         <div class="main2 borH bgW">

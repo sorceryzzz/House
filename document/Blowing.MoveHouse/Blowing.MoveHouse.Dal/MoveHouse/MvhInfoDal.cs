@@ -44,7 +44,7 @@ namespace Blowing.MoveHouse.Dal.MoveHouse
             sqlCountQy += sbWhereStr.ToString();
 
             sbWhereStr.Append(@" AND (mvhInfo.f_bj_id >=(
-                                    SELECT MAX(mvhInfo.f_bj_id) FROM (
+                                    SELECT MAX(tmp.f_bj_id) FROM (
                                         SELECT mvhA.f_bj_id FROM `movehouse`.`MvhInfo` AS mvhA ORDER BY mvhA.f_bj_id LIMIT @PageIndex,1) AS tmp
                                     ) )
                              ORDER BY mvhInfo.f_bj_id ASC      

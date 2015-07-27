@@ -45,6 +45,17 @@ namespace Blowing.MoveHouse.WebPoint.Controllers
 
             return PartialView(mvhInfoList);
         }
+
+        /// <summary>
+        ///发布搬家信息
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult PublishMvhInfo()
+        {
+
+            return PartialView();
+        }
         /// <summary>
         /// 发布搬家信息
         /// </summary>
@@ -56,7 +67,7 @@ namespace Blowing.MoveHouse.WebPoint.Controllers
         /// <param name="F_BjDecription"></param>
         /// <returns></returns>
         [HttpPost]
-        public ContentResult PublishMvhInfo( string F_Bj_Titile,string F_Bj_UID, short F_IsDisplaySex, short F_IsNeedHelpBj, decimal F_BjCostStart, decimal F_BjCostEnd, string F_BjDecription)
+        public ContentResult PublishMvhInfoPost( string F_Bj_Titile,string F_Bj_UID, short F_IsDisplaySex, short F_IsNeedHelpBj, decimal F_BjCostStart, decimal F_BjCostEnd, string F_BjDecription)
         {
             int resultInt = 0;
 

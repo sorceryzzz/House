@@ -470,7 +470,8 @@ a:focus {
 }
 
 .row-fluid .span3 {
-  width: 23.404255319148934%;
+  border: solid beige;
+  width: 20.404255319148934%;
   *width: 23.351063829787233%;
 }
 
@@ -6118,7 +6119,8 @@ a.badge:focus {
 }
 
 .hero-unit {
-  padding: 60px;
+    margin-top:50px;
+  /*padding: 0px;*/
   margin-bottom: 30px;
   font-size: 18px;
   font-weight: 200;
