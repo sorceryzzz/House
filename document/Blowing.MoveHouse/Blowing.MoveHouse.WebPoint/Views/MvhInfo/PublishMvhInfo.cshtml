@@ -1,0 +1,49 @@
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+  <br />
+  <br />
+ <br />
+  <label>姓名：</label> <input type="text" id="txtName" value=" "  placeholder="王某某"/>
+  <label>联系电话：</label> <input type="text" id="txtMobile" value=" "  placeholder="158******25"/>
+  <label>性别:</label><input type="radio" name="radioSex" value="男" /> 男<input type="radio" name="radioSex" value="女 " />女
+  <label>地点:</label><input type="text"  id="txtPlace" name="name" value=" "  placeholder="北京"/>
+  <label>搬家预算:</label><input type="text" name="name" value=" " placeholder="最底预算" id="txtCostStart" />-<input type="text" name="name" value="" id="txtCostEnd"/>
+  <label>是否需要搬家</label>是<input type="checkbox" name="name" value=" " id="isNeedHelp" />
+  <label>说点什么:</label><textarea id="txtDescription"></textarea>
+
+    <input type="button" name="name" value="发布信息" id ="publichButton"/>
+</div>
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+
+        //发布消息
+        $("#publichButton").click(function () {
+
+            var txtName = $("#txtName").val();
+            var txtMobile = $("#txtMobile").val();
+            var isNeedHelp = $("#isNeedHelp").val();
+           // var radioSex = $("name=[radioSex]").val();
+            var txtPlace = $("#txtPlace").val();
+            var txtCostStart = $("#txtCostStart").val();
+            var txtCostEnd = $("#txtCostEnd").val();
+            var txtDescription=$("#txtDescription").val();
+            $.post("/MvhInfo/PublishMvhInfoPost",
+            {
+                name:txtName,
+                mobile:txtMobile,
+                isNeedHelpBj:1,
+                costStart:txtCostStart,
+                costEnd:txtCostEnd,
+                decription :txtDescription
+            }, function (data) {
+                alert("发布成功"); 
+            });
+        });
+    })
+</script>

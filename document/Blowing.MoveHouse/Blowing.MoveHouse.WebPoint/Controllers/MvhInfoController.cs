@@ -67,20 +67,24 @@ namespace Blowing.MoveHouse.WebPoint.Controllers
         /// <param name="F_BjDecription"></param>
         /// <returns></returns>
         [HttpPost]
-        public ContentResult PublishMvhInfoPost( string F_Bj_Titile,string F_Bj_UID, short F_IsDisplaySex, short F_IsNeedHelpBj, decimal F_BjCostStart, decimal F_BjCostEnd, string F_BjDecription)
+        public ContentResult PublishMvhInfoPost( string name,string mobile, short isNeedHelpBj, decimal costStart, decimal costEnd, string decription)
         {
             int resultInt = 0;
+            string uid = "";
+            short F_IsDisplaySex = 0;
 
             #region - paras -
           
             MvhInfoModel mvhInfoModel = new MvhInfoModel();
-            mvhInfoModel.F_Bj_Title = F_Bj_Titile;
-            mvhInfoModel.F_Bj_UID = F_Bj_UID;
+            mvhInfoModel.F_Bj_Title =string.Empty;
+            mvhInfoModel.F_Mobile = mobile;
+            mvhInfoModel.F_Name = name;
+            mvhInfoModel.F_Bj_UID = uid;
             mvhInfoModel.F_IsDisplaySex = F_IsDisplaySex;
-            mvhInfoModel.F_IsNeedHelpBj = F_IsNeedHelpBj;
-            mvhInfoModel.F_BjCostStart = F_BjCostStart;
-            mvhInfoModel.F_BjCostEnd = F_BjCostEnd;
-            mvhInfoModel.F_BjDecription = F_BjDecription; 
+            mvhInfoModel.F_IsNeedHelpBj = isNeedHelpBj;
+            mvhInfoModel.F_BjCostStart = costStart;
+            mvhInfoModel.F_BjCostEnd = costEnd;
+            mvhInfoModel.F_BjDecription = decription; 
             #endregion
 
             #region - excute -

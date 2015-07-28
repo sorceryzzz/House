@@ -98,8 +98,10 @@ namespace Blowing.MoveHouse.Dal.MoveHouse
 
             #region - sql qy -
             string sqlQy = @"INSERT INTO `movehouse`.`MvhInfo`
-            (                   
+            (                  
                                 `f_Bj_UID`,
+                                `f_Bj_Name`,
+                                `f_Bj_Mobile`,
                                 `f_Bj_Title`,
                                 `f_IsDiplaySex`,
                                 `f_IsNeedHelpBj`,
@@ -110,26 +112,30 @@ namespace Blowing.MoveHouse.Dal.MoveHouse
                                 `f_UpdateTime`,
                                 `avg1`,
                                 `avg2`)
-                             VALUES (
-                                 @f_Bj_UID,
-                                 @f_Bj_Title,
-                                 @f_IsDiplaySex,
-                                 @f_IsNeedHelpBj,
-                                 @f_BjCostsStart,
-                                 @f_BjCostEnd,
-                                 @f_BjDecription,
-                                 @f_InsertTime,
-                                 @f_UpdateTime,
-                                 @avg1,
-                                 @avg2);";
+                             VALUES ( 
+                            	@f_Bj_UID, 
+                            	@f_Bj_Name, 
+                            	@f_Bj_Mobile, 
+                            	@f_Bj_Title, 
+                            	@f_IsDiplaySex, 
+                            	@f_IsNeedHelpBj, 
+                            	@f_BjCostsStart, 
+                            	@f_BjCostEnd, 
+                            	@f_BjDecription, 
+                            	@f_InsertTime, 
+                            	@f_UpdateTime, 
+                            	@avg1, 
+                            	@avg2 );";
             #endregion
 
             #region - params -
 
             MySqlParameter[] paras = 
            {
-               new MySqlParameter("@f_Bj_UID",mvhInfo.F_Bj_UID),
-                new MySqlParameter("@f_Bj_Title",mvhInfo.F_Bj_Title),
+                new MySqlParameter("@f_Bj_UID",mvhInfo.F_Bj_UID),
+               new MySqlParameter("@f_Bj_Name",mvhInfo.F_Name),
+               new MySqlParameter("@f_Bj_Mobile",mvhInfo.F_Mobile),
+               new MySqlParameter("@f_Bj_Title",string.Empty),
                new MySqlParameter("@f_IsDiplaySex",mvhInfo.F_IsDisplaySex),
                new MySqlParameter("@f_IsNeedHelpBj",mvhInfo.F_IsNeedHelpBj),
                new MySqlParameter("@f_BjCostsStart",mvhInfo.F_BjCostStart),
