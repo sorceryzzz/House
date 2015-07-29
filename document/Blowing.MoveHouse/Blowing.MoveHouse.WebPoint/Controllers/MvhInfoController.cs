@@ -70,7 +70,7 @@ namespace Blowing.MoveHouse.WebPoint.Controllers
         public ContentResult PublishMvhInfoPost( string name,string mobile, short isNeedHelpBj, decimal costStart, decimal costEnd, string decription)
         {
             int resultInt = 0;
-            string uid = "";
+            string uid = "000000000000000000";
             short F_IsDisplaySex = 0;
 
             #region - paras -
