@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div class="span9" id="MvhSpcPersonListBody">
+
+
+
+
+
+</div><!--/row-->
+@section Scripts{
+    <script type="text/javascript">
+        $(function () {
+            GetMvhSpcePersonList(1);
+        });
+        //获取积分明细信息
+        function GetMvhSpcePersonList(pageIndex) {
+            $.ajax({
+                url: '/MvhSpcPerson/GetMvhSpcList?pageIndex=' + pageIndex + "&pageSize=12",
+                type: 'GET',
+                success: function (data) {
+                    $("#MvhSpcPersonListBody").html("");
+                    $("#MvhSpcPersonListBody").html(data);
+                }
+            });
+        }
+    </script>}

@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "PublishMvhSpc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <label>联系人:</label><input type="text" name="name" value=" "  id="txtName"/>
+    <label>:</label>
+    <select id="mvhSpcType">
+    <option>专人搬家</option>
+    <option>搬家公司</option>
+    <option>附近的人</option>
+
+    </select>
+
+    <label>车型:</label>
+    <input type="checkbox" name="check" value="金杯" /> 金杯
+    <input type="checkbox" name="check" value="小面" /> 小面
+    <input type="checkbox" name="check" value="皮卡" /> 皮卡
+
+
+    <label>地点:</label><input type="text" name="name" value=" " id="txtPlace" />
+    <label>联系电话:</label><input type="text" name="name" value=" " id="txtMoblie" />
+    <label>最低费用:</label><input type="text" name="name" value=" " id="txtCostStart"/>
+    <label>说明:</label>
+    <textarea id="decription">
+
+
+    </textarea>
+    </br>
+    <input type="submit" name="name" value="发布" id="publichButton"/>
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    //入口
+    $(function () {
+
+        $("#publichButton").click(function () {
+
+            var txtName = $("#txtName").val();
+            var txtMvhSpcType = $("#mvhSpcType").find("option:selected").text();
+            var carTypeInfo = "";
+            $('input[name=check]:checked').each(function () {
+                carTypeInfo = carTypeInfo + $(this).val() + "";
+
+            });
+            var txtPlace = $("#txtPlace").val();
+            var txtMoblie = $("#txtMoblie").val();
+            var txtCostStart = $("#txtCostStart").val();
+            var decription = $("#decription").val();
+
+            $.post("/MvhSpcPerson/PublishMvhSpc",
+                {
+                    txtName: txtName,
+                    txtMvhSpcType: txtMvhSpcType,
+                    carTypeInfo: carTypeInfo,
+                    txtPlace: txtPlace,
+                    txtMoblie: txtMoblie,
+                    txtCostStart: txtCostStart,
+                    decription: decription
+                },
+                function (data) {
+
+                    if (data == "true") {
+                        alert("发布成功");
+                    }
+                });
+
+        });
+
+
+
+       
+    })
+</script>

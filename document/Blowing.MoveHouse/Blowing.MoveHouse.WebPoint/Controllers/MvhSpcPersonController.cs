@@ -1,4 +1,5 @@
 ﻿using Blowing.MoveHouse.Bll.MoveHouse;
+using Blowing.MoveHouse.Model.Enum;
 using Blowing.MoveHouse.Model.MoveHouse;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,21 @@ namespace Blowing.MoveHouse.WebPoint.Controllers
         MvhSpcBll mvhSpcBll = new MvhSpcBll();
 
         #region - method -
+        // GET: MvhSpcPerson
+        public ActionResult Index()
+        {
+            return View();
+        }
 
+        /// <summary>
+        /// 发布搬家专人信息
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult PublishMvhSpc()
+        {
+
+            return PartialView();
+        }
         /// <summary>
         /// 发布搬家专人信息
         /// </summary>
@@ -26,31 +41,29 @@ namespace Blowing.MoveHouse.WebPoint.Controllers
         /// <param name="F_BjDecription"></param>
         /// <returns></returns>
         [HttpPost]
-        public ContentResult PublishMvhSpc(int f_BjpCarTypeID, decimal f_BjCostStart, decimal f_BjCostEnd, string f_BjDecription)
+        public ContentResult PublishMvhSpc(string txtName,string txtMvhSpcType,string txtPlace,string txtMoblie,string carTypeInfo, decimal txtCostStart, string decription)
         {
             #region - paras -
             int resultInt = 0;
             MvhSpcPersonModel mvhSpcModel = new MvhSpcPersonModel();
 
             mvhSpcModel.F_Bjp_UID = "000000000000000000";
-            mvhSpcModel.F_BjpCarTypeID = f_BjpCarTypeID;
-            mvhSpcModel.F_BjpCostStart = f_BjCostStart;
-            mvhSpcModel.F_BjpCostEnd = f_BjCostEnd;
-            mvhSpcModel.F_BjpDecription = f_BjDecription;
+            mvhSpcModel.F_BjpCarTypeID = (int)(CarTypeInfoEnum)Enum.Parse(typeof(CarTypeInfoEnum), carTypeInfo);
+            mvhSpcModel.F_BjpCostStart = txtCostStart;
+            mvhSpcModel.F_BjpDecription = decription;
+            mvhSpcModel.F_Name = txtName;
+            mvhSpcModel.F_Place = txtPlace;
+
+            mvhSpcModel.F_MvhSpcType = (int)(MvhSpcType)Enum.Parse(typeof(MvhSpcType), txtMvhSpcType);
+            mvhSpcModel.F_Mobile = txtMoblie;
             #endregion
 
             #region - result -
             resultInt = mvhSpcBll.InserMvhSpcPerson(mvhSpcModel);
-            return Content(resultInt.ToString()); 
+            return Content((resultInt>0).ToString()); 
             #endregion
         }
-        // GET: MvhSpcPerson
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-
+    
         /// <summary>
         /// 获取搬家专人信息
         /// </summary>
@@ -68,13 +81,12 @@ namespace Blowing.MoveHouse.WebPoint.Controllers
             {
                 {"PageIndex", pageIndex},
                 {"PageCount", Math.Ceiling(count/(double) pageSize)},
-                {"CallBack", "GetMvhInfoList"}
+                {"CallBack", "GetMvhSpcePersonList"}
             };
             ViewBag.dataDictionary = dataDictionary;
             #endregion
 
             return PartialView(mvhInfoList);
-
         } 
         #endregion
     }

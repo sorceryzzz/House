@@ -21,9 +21,9 @@ namespace Blowing.MoveHouse.Web.Unit
             for (int i = 0; i < 100; i++)
             {
 
-                var o = mvhSpcController.PublishMvhSpc(1, 100, 200, "搬家界的良心");
-                int result = int.Parse(o.Content);
-                Assert.AreEqual(result > 0, true);
+                //var o = mvhSpcController.PublishMvhSpc(1, 100, 200, "搬家界的良心");
+                //int result = int.Parse(o.Content);
+                //Assert.AreEqual(result > 0, true);
             }
         }
     }

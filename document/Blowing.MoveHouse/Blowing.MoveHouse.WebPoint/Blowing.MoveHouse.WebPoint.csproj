@@ -170,6 +170,8 @@
     <Content Include="Views\MvhSpcPerson\GetMvhSpcList.cshtml" />
     <Content Include="Views\MvhInfo\Index.cshtml" />
     <Content Include="Views\MvhInfo\PublishMvhInfo.cshtml" />
+    <Content Include="Views\MvhSpcPerson\Index.cshtml" />
+    <Content Include="Views\MvhSpcPerson\PublishMvhSpc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

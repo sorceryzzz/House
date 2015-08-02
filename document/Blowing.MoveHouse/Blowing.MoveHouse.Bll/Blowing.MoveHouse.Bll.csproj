@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="MoveHouse\MvhInfoBll.cs" />
     <Compile Include="MoveHouse\MvhSpcBll.cs" />
+    <Compile Include="MoveHouse\OrderInfoBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

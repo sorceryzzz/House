@@ -39,10 +39,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enum\CarTypeInfoEnum.cs" />
+    <Compile Include="Enum\MvhSpcType.cs" />
     <Compile Include="MoveHouse\BaseModel.cs" />
     <Compile Include="MoveHouse\CarTypeInfoModel.cs" />
     <Compile Include="MoveHouse\MvhInfoModel.cs" />
     <Compile Include="MoveHouse\MvhSpcPersonModel.cs" />
+    <Compile Include="MoveHouse\OrderInfoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

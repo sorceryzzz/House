@@ -34,22 +34,3 @@
 
     </div>
 </div>
-
-<script type="text/javascript">
- $(function () {
-     GetMvhSpcList(1);
- });
-
- //获取积分明细信息
- function GetMvhSpcList(pageIndex) {
-            $.ajax({
-                url: '/MoveHouse/GetMvhSpcList?pageIndex=' + pageIndex + "&pageSize=10",
-                type: 'GET',
-                success: function (data) {
-
-                    $("#MvhInfoListBody").html(data);
-                }
-            });
-}
-     
-</script>
