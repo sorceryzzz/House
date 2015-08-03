@@ -39,12 +39,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MoveHouse\BidInfoBll.cs" />
     <Compile Include="MoveHouse\MvhInfoBll.cs" />
     <Compile Include="MoveHouse\MvhSpcBll.cs" />
     <Compile Include="MoveHouse\OrderInfoBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\UserInfoBll.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Blowing.MoveHouse.Common\Blowing.MoveHouse.Common.csproj">
+      <Project>{f2a5d50e-e6c2-40ae-8019-df530407ca52}</Project>
+      <Name>Blowing.MoveHouse.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Blowing.MoveHouse.Dal\Blowing.MoveHouse.Dal.csproj">
       <Project>{e338f170-a8b2-4b53-95d8-9dac32d3564c}</Project>
       <Name>Blowing.MoveHouse.Dal</Name>

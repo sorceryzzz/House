@@ -40,9 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MoveHouse\BidDal.cs" />
     <Compile Include="MoveHouse\MvhInfoDal.cs" />
     <Compile Include="MoveHouse\MvhSpcPersonDal.cs" />
+    <Compile Include="MoveHouse\OrderInfoDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="User\UserInfoDal.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Blowing.MoveHouse.Common\Blowing.MoveHouse.Common.csproj">

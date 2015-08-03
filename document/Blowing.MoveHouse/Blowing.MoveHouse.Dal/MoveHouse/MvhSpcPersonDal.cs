@@ -18,7 +18,7 @@ namespace Blowing.MoveHouse.Dal.MoveHouse
 
        #region - method -
        /// <summary>
-       /// 查询搬家专人信息分页
+       /// 查询专人搬家信息分页
        /// </summary>
        /// <param name="pageIndex">当前索引</param>
        /// <param name="pageSize">页大小</param>
@@ -92,7 +92,7 @@ namespace Blowing.MoveHouse.Dal.MoveHouse
            return mvhSpcPresonList;
        }
        /// <summary>
-       /// 生成搬家专人信息
+       /// 生成专人搬家信息
        /// </summary>
        /// <param name="mvhSpcModel">搬家专人信息实体</param>
        /// <returns></returns>
@@ -102,24 +102,32 @@ namespace Blowing.MoveHouse.Dal.MoveHouse
 
            #region - sql qy -
            string sqlQy = @"INSERT INTO `movehouse`.`mvhspcinfo`
-                                    (`f_Bjp_UID`,
-                                     `f_BjpCarTypeID`,
-                                     `f_BjpCostStart`,
-                                     `f_BjpCostEnd`,
-                                     `f_BjpDecription`,
-                                     `f_InsertTime`,
-                                     `f_UpdateTime`,
-                                     `avg1`,
-                                     `avg2`)
-                           VALUES (@f_Bjp_UID,
-                                   @f_BjpCarTypeID,
-                                   @f_BjpCostStart,
-                                   @f_BjpCostEnd,
-                                   @f_BjpDecription,
-                                   @f_InsertTime,
-                                   @f_UpdateTime,
-                                   @avg1,
-                                   @avg2);";
+                                        (`f_Bjp_UID`,
+                                         `f_BjpCarTypeID`,
+                                         `f_Name`,
+                                         `f_mvhSpcType`,
+                                         `f_place`,
+                                         `f_mobile`,
+                                         `f_BjpCostStart`,
+                                         `f_BjpDecription`,
+                                         `f_BjpCostEnd`,
+                                         `f_InsertTime`,
+                                         `f_UpdateTime`,
+                                         `avg1`,
+                                         `avg2`)
+                            VALUES (@f_Bjp_UID,
+                                    @f_BjpCarTypeID,
+                                    @f_Name,
+                                    @f_mvhSpcType,
+                                    @f_place,
+                                    @f_mobile,
+                                    @f_BjpCostStart,
+                                    @f_BjpDecription,
+                                    @f_BjpCostEnd,
+                                    @f_InsertTime,
+                                    @f_UpdateTime,
+                                    @avg1,
+                                    @avg2);;";
 
            #endregion
 
@@ -128,6 +136,10 @@ namespace Blowing.MoveHouse.Dal.MoveHouse
            {
                new MySqlParameter("@f_Bjp_UID",mvhSpcModel.F_Bjp_UID),
                new MySqlParameter("@f_BjpCarTypeID",mvhSpcModel.F_BjpCarTypeID),
+               new MySqlParameter("@f_Name",mvhSpcModel.F_Name),
+               new MySqlParameter("@f_mvhSpcType",mvhSpcModel.F_MvhSpcType),
+               new MySqlParameter("@f_place",1),
+               new MySqlParameter("@f_mobile",mvhSpcModel.F_Mobile),
                new MySqlParameter("@f_BjpCostStart",mvhSpcModel.F_BjpCostStart),
                new MySqlParameter("@f_BjpCostEnd",mvhSpcModel.F_BjpCostEnd),
                new MySqlParameter("@f_BjpDecription",mvhSpcModel.F_BjpDecription),
