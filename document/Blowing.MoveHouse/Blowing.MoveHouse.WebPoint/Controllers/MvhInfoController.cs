@@ -12,6 +12,30 @@ namespace Blowing.MoveHouse.WebPoint.Controllers
     {
 
         MvhInfoBll mvhInfoBll = new MvhInfoBll();
+
+
+        #region - method -
+
+        /// <summary>
+        /// 获取搬家信息详情
+        /// </summary>
+        /// <param name="msgID">信息ID</param>
+        /// <returns></returns>
+        public ActionResult GetMvhInfoDetail(int msgID)
+        {
+            #region - check paras -
+            if (msgID<=0)
+            {
+                return null;
+            }
+            #endregion
+
+            #region - excute -
+            MvhInfoModel mvhModel = mvhInfoBll.GetMvhInfoDetatil(msgID);
+
+            return View(mvhModel); 
+            #endregion
+        }
         // GET: MoveHouse
         public ActionResult Index()
         {
@@ -27,12 +51,12 @@ namespace Blowing.MoveHouse.WebPoint.Controllers
         [HttpGet]
         public ActionResult GetMvhInfoList(int pageIndex,int pageSize)
         {
-            string uid = "000000000000000000";
+            string uid = "aa897dd5-f352-4395-8fd5-250cba00598d";
             int count=0;
    
             #region - 查询分页数据 -
 
-            IList<MvhInfoModel> mvhInfoList = mvhInfoBll.GetMvhInfoRecordsBy(uid, pageIndex, pageSize, ref count);
+            IList<MvhInfoModel> mvhInfoList = mvhInfoBll.GetMvhInfoRecordsBy(uid, pageIndex, pageSize, out count);
 
             ViewDataDictionary dataDictionary = new ViewDataDictionary
             {
@@ -45,7 +69,6 @@ namespace Blowing.MoveHouse.WebPoint.Controllers
 
             return PartialView(mvhInfoList);
         }
-
         /// <summary>
         ///发布搬家信息
         /// </summary>
@@ -70,7 +93,7 @@ namespace Blowing.MoveHouse.WebPoint.Controllers
         public ContentResult PublishMvhInfoPost( string name,string mobile, short isNeedHelpBj, decimal costStart, decimal costEnd, string decription)
         {
             int resultInt = 0;
-            string uid = "000000000000000000";
+            string uid = "aa897dd5-f352-4395-8fd5-250cba00598d";
             short F_IsDisplaySex = 0;
 
             #region - paras -
@@ -93,5 +116,7 @@ namespace Blowing.MoveHouse.WebPoint.Controllers
 
            return Content(resultInt.ToString());
         }
+   
+	   #endregion   
     }
 }

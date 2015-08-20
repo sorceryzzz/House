@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<div>
+
+    <table>
+        <tr>
+            <td><label>发布人姓名:</label></td>
+            <td><label>@ViewBag.MvhInfoModel.F_Name</label></td>
+        </tr>
+        <tr>
+            <td><label>联系电话:</label></td>
+            <td><label>@ViewBag.MvhInfoModel.F_Mobile</label></td>
+        </tr>
+        <tr>
+            <td><label>地点:</label></td>
+            <td><label>@ViewBag.MvhInfoModel.F_Bj_Site</label></td>
+        </tr>
+        <tr>
+            <td><label>最低预算:</label></td>
+            <td><label>@ViewBag.MvhInfoModel.F_BjCostStart 起</label></td>
+        </tr>
+        <tr>
+            <td><label>描述:</label></td>
+            <td><label>@ViewBag.MvhInfoModel.F_BjDecription</label></td>
+        </tr>
+    </table>
+    <br/>
+    123
+    <table>
+
+        @foreach (var bidInfoItem in ViewBag.BidInfoModel)
+        {
+            <tr><td>bidInfoItem.UserName</td></tr>
+        }
+    </table>
+</div>

@@ -42,13 +42,18 @@
     <Compile Include="Enum\CarTypeInfoEnum.cs" />
     <Compile Include="Enum\LoginType.cs" />
     <Compile Include="Enum\MvhSpcType.cs" />
+    <Compile Include="MoveHouse\AreaModel.cs" />
     <Compile Include="MoveHouse\BaseModel.cs" />
+    <Compile Include="MoveHouse\BidInfoExtModel.cs" />
     <Compile Include="MoveHouse\BidInfoModel.cs" />
     <Compile Include="MoveHouse\CarTypeInfoModel.cs" />
     <Compile Include="MoveHouse\MvhInfoModel.cs" />
     <Compile Include="MoveHouse\MvhSpcPersonModel.cs" />
     <Compile Include="MoveHouse\OrderInfoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Score\ScoreCondation.cs" />
+    <Compile Include="Score\ScoreDetailModel.cs" />
+    <Compile Include="Score\ScoreInfoModel.cs" />
     <Compile Include="User\UserInfoModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -5,11 +5,9 @@
 
 <div class="span9" id="MvhInfoListBody">
 
-
-
-
-
 </div><!--/row-->
+
+
 @section Scripts{
     <script type="text/javascript">
         $(function () {
@@ -23,6 +21,35 @@
                 success: function (data) {
                     $("#MvhInfoListBody").html("");
                     $("#MvhInfoListBody").html(data);
+
+                    //竞标
+                    $(".Bidbtn").click(function () {
+                        var msgID = $($(this).parent().parent().children()[0]).val();
+
+                        $.post("/Bid/AddBidInfo", { msgID: msgID }, function (data) {
+
+                            var resultInt = parseInt(data);
+
+                            if (resultInt > 0) {
+                                alert("竞标成功！");
+                            }
+                            else if (resultInt==-1) {
+                                alert("已竞标成功！");
+                            }
+                            else {
+                                alert("竞标失败！");
+                            }
+                        });
+                    });
+
+                    //查看详情
+                    $(".selectDetailBtn").click(function () {
+
+                        var msgID = $($(this).parent().parent().children()[0]).val();
+
+                        location.href = "/MvhInfo/GetMvhInfoDetail?msgID="+msgID;
+
+                    });
                 }
             });
         }

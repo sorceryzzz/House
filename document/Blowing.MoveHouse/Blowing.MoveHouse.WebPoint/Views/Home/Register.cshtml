@@ -1,0 +1,40 @@
+﻿
+@{
+    Layout = null;
+}
+<div>
+    <label>账户名:</label><input type="text" name="name" value=" " id="txtUserName" />
+    <label>密码:</label><input type="text" name="name" value=" "  id="txtPwd"/>
+    <label>邮箱:</label><input type="text" name="name" value=" "  id="txtMail"/>
+    <label>手机号:</label><input type="text" name="name" value=" "  id="txtMobile"/>
+    <input type="submit"  id="submitButton" name="name" value="注册" />
+
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript"> 
+
+$(function () {
+    $("#submitButton").click(function () {
+
+        var userName = $("#txtUserName").val();
+        var pwd = $("#txtPwd").val();
+        var mail = $("#txtMail").val();
+        var mobile = $("#txtMobile").val();
+       
+
+        $.post("/Home/RegisterForm",
+        {
+            userName: userName,
+            pwd: pwd,
+            mail: mail,
+            mobile: mobile,
+        },
+         function (data) {
+
+
+        });
+
+    });
+  });
+</script>

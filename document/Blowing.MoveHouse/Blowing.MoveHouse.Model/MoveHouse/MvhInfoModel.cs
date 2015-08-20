@@ -14,6 +14,7 @@ namespace Blowing.MoveHouse.Model.MoveHouse
       private string _f_Bj_Title;
       private string _f_name;
       private string _f_Mobile;
+      private int _f_bj_site;
       private int _f_isDisplaySex;
       private int _f_isNeedHelpBj;
       private decimal _f_bjCostStart;
@@ -42,6 +43,10 @@ namespace Blowing.MoveHouse.Model.MoveHouse
       /// 用户ID
       /// </summary>
       public string F_Bj_UID { set { _f_bj_uid = value; } get { return _f_bj_uid; } }
+      /// <summary>
+      /// 地点
+      /// </summary>
+      public int F_Bj_Site { set { _f_bj_site = value; } get { return _f_bj_site; } }
       /// <summary>
       /// 是否显示性别
       /// </summary>

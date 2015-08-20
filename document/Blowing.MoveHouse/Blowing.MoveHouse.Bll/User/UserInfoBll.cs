@@ -1,6 +1,8 @@
 ﻿using Blowing.MoveHouse.Common;
+using Blowing.MoveHouse.Dal.MoveHouse;
 using Blowing.MoveHouse.Dal.User;
 using Blowing.MoveHouse.Model.Enum;
+using Blowing.MoveHouse.Model.MoveHouse;
 using Blowing.MoveHouse.Model.User;
 using System;
 using System.Collections.Generic;
@@ -14,20 +16,25 @@ namespace Blowing.MoveHouse.Bll.User
     {
 
        UserInfoDal urInfoDal = new UserInfoDal();
-
+       MvhInfoDal mvhInfoDal = new MvhInfoDal();
 
        public UserInfoBll() { }
 
 
         #region  - method -
+       /// <summary>
+       /// 获取搬家信息
+       /// </summary>
+       /// <param name="uid">用户ID</param>
+       /// <param name="pageIndex">当前页</param>
+       /// <param name="pageSize">页大小</param>
+       /// <param name="count">页总数</param>
+       /// <returns></returns>
+       public IList<MvhInfoModel> LoadMvhInfoListBy(string uid, int pageIndex, int pageSize, out int count)
+       {
 
-       //public int CheckLogin()
-       //{
-        
-         
-
-
-
+           return mvhInfoDal.GetMvhInfoRecordsBy(uid, pageIndex, pageSize, out count);
+       }
        //}
        /// <summary>
        /// 登录用户

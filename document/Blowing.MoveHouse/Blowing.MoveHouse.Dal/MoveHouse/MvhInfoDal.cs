@@ -17,6 +17,68 @@ namespace Blowing.MoveHouse.Dal.MoveHouse
 
         #region - method -
         /// <summary>
+        /// 获取搬家信息详情
+        /// </summary>
+        /// <param name="msgID">信息ID</param>
+        /// <returns>搬家信息详情</returns>
+        public MvhInfoModel GetMvhInfoDetatil(int msgID)
+        {
+            MvhInfoModel mvhInfoList = null;
+
+
+            #region - sql qy -
+            string selectDetailQy = @"SELECT
+                                        `f_Bj_ID`,
+                                        `f_Bj_Name`,
+                                        `f_Bj_Mobile`,
+                                        `f_Bj_Title`,
+                                        `f_Bj_UID`,
+                                        `f_Bj_Site`,
+                                        `f_IsDiplaySex`,
+                                        `f_IsNeedHelpBj`,
+                                        `f_BjCostsStart`,
+                                        `f_BjCostEnd`,
+                                        `f_BjDecription`,
+                                        `f_InsertTime`,
+                                        `f_UpdateTime`,
+                                        `avg1`,
+                                        `avg2`
+                                      FROM `movehouse`.`mvhinfo` AS mvhInfo
+                                      WHERE mvhinfo.`f_Bj_ID`=@MsgID";
+            #endregion
+
+            #region - paras -
+            
+            MySqlParameter[] paras = 
+           {
+               new MySqlParameter("@MsgID",msgID)
+           };
+            #endregion
+
+            #region - excute -
+             try
+            {
+                //记录查询
+                DataTable dataTable = DbHelperMySql.GetDataSet(DbHelperMySql.connectionStringManager, selectDetailQy, paras).Tables[0];
+                if (dataTable != null)
+                {
+                    mvhInfoList =new MvhInfoModel();
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        mvhInfoList=TransMvhInfo(row);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                //记录日志
+                throw ex;
+            }
+            #endregion
+
+            return mvhInfoList;
+        }
+        /// <summary>
         /// 获取搬家信息分页
         /// </summary>
         /// <param name="uid">用户ID</param>
@@ -24,7 +86,7 @@ namespace Blowing.MoveHouse.Dal.MoveHouse
         /// <param name="pageSize">大小</param>
         /// <param name="count">总条数</param>
         /// <returns>搬家信息集合</returns>
-        public IList<MvhInfoModel> GetMvhInfoRecordsBy(string uid,int pageIndex,int pageSize,ref int count)
+        public IList<MvhInfoModel> GetMvhInfoRecordsBy(string uid,int pageIndex,int pageSize,out int count)
         {
 
             IList<MvhInfoModel> mvhInfoList = null;
@@ -34,8 +96,21 @@ namespace Blowing.MoveHouse.Dal.MoveHouse
             string sqlCountQy = @"SELECT COUNT(mvhInfo.f_Bj_ID)
                                   FROM `movehouse`.`MvhInfo` AS mvhInfo ";
 
-            string sqlPageQy = @"SELECT mvhInfo.f_Bj_ID,mvhInfo.f_Bj_Title,mvhInfo.f_Bj_UID,mvhInfo.f_IsDiplaySex,mvhInfo.f_IsDiplaySex,mvhInfo.f_IsNeedHelpBj,f_BjCostsStart,
-                                    mvhInfo.f_BjCostEnd, mvhInfo.f_BjDecription,mvhInfo.f_InsertTime,mvhInfo.f_UpdateTime
+            string sqlPageQy = @"SELECT `f_Bj_ID`,
+                                        `f_Bj_Name`,
+                                        `f_Bj_Mobile`,
+                                        `f_Bj_Title`,
+                                        `f_Bj_UID`,
+                                        `f_Bj_Site`,
+                                        `f_IsDiplaySex`,
+                                        `f_IsNeedHelpBj`,
+                                        `f_BjCostsStart`,
+                                        `f_BjCostEnd`,
+                                        `f_BjDecription`,
+                                        `f_InsertTime`,
+                                        `f_UpdateTime`,
+                                        `avg1`,
+                                        `avg2`
                              FROM `movehouse`.`MvhInfo` AS mvhInfo ";
 
             StringBuilder sbWhereStr=new StringBuilder();
@@ -175,7 +250,9 @@ namespace Blowing.MoveHouse.Dal.MoveHouse
         {
             MvhInfoModel mvhInfo = new MvhInfoModel();
             mvhInfo.F_Bj_ID = row["f_bj_id"] != null ? Convert.ToInt32(row["f_bj_id"]) : 0;
-            mvhInfo.F_Bj_UID = row["f_bj_id"] != null ? row["f_bj_id"].ToString() : string.Empty;
+            mvhInfo.F_Name = row["f_Bj_Name"] != null ? row["f_Bj_Name"].ToString() : string.Empty;
+            mvhInfo.F_Mobile = row["f_Bj_Mobile"] != null ? row["f_Bj_Mobile"].ToString() : string.Empty;
+            mvhInfo.F_Bj_Site = row["f_Bj_Site"] != null ? Convert.ToInt32(row["f_Bj_Site"]) : 0;
             mvhInfo.F_IsDisplaySex = row["f_IsDiplaySex"] != null ? Convert.ToInt32(row["f_IsDiplaySex"]) : 0;
             mvhInfo.F_IsNeedHelpBj = row["f_IsNeedHelpBj"] != null ? Convert.ToInt32(row["f_IsNeedHelpBj"]) : 0;
             mvhInfo.F_BjCostStart = row["f_BjCostsStart"] != null ? Convert.ToDecimal(row["f_BjCostsStart"]) : 0;
@@ -185,7 +262,6 @@ namespace Blowing.MoveHouse.Dal.MoveHouse
             mvhInfo.F_InsetTime = row["f_UpdateTime"] != null ? Convert.ToDateTime(row["f_UpdateTime"]) : DateTime.MinValue;
             return mvhInfo;
         }
-
         #endregion
 
     }

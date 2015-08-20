@@ -6,8 +6,8 @@
 
 <div class="hero-unit">
     <h1>发布搬家信息</h1>
-    <p>This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-    <p><a href="#" class="btn btn-primary btn-large">Learn more &raquo;</a></p>
+    <br/>
+     <p><a href="#" class="btn btn-primary btn-large">点击发布&raquo;</a></p>
 </div>
 
 <div>
@@ -16,9 +16,11 @@
     @foreach (MvhInfoModel mvhModel in Model)
     {
         <div class="span3">
-            <h2>标题</h2>
+            <input type="hidden" id="msgID" name="name" value="@mvhModel.F_Bj_ID " />
+            <h3>@mvhModel.F_Bj_Site</h3>
             <p>@mvhModel.F_BjDecription</p>
-            <p><a class="btn" href="#">查看详情</a></p>
+            <p><a class="selectDetailBtn" href="#">查看详情</a><a class="Bidbtn" href="javascript:void(0)" >竞标</a>(已有 人投标)</p>
+ 
             @*<td>@mvhModel.F_Bj_UID</td>
             <td>@mvhModel.F_IsDisplaySex</td>
             <td>@mvhModel.F_IsNeedHelpBj</td>
@@ -27,14 +29,15 @@
             <td></td>*@
         </div><!--/row-->
     }
-</div>
-
+</div>    
 
 <div class="pagecompus tc pt20 pb20">
     @Html.Partial("page", (ViewDataDictionary)ViewBag.dataDictionary)
 </div>
 
 </div>
+
+
 
 @*<div id="MvhInfoListBody">
         <div class="main2 borH bgW">

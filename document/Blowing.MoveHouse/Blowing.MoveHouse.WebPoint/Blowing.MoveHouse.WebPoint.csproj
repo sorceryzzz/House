@@ -113,12 +113,17 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AreaController.cs" />
+    <Compile Include="Controllers\BidController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MvhInfoController.cs" />
     <Compile Include="Controllers\MvhSpcPersonController.cs" />
+    <Compile Include="Controllers\ScoreController.cs" />
+    <Compile Include="Controllers\UserCenterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Handle\MvhActionAuthorizeAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -172,10 +177,21 @@
     <Content Include="Views\MvhInfo\PublishMvhInfo.cshtml" />
     <Content Include="Views\MvhSpcPerson\Index.cshtml" />
     <Content Include="Views\MvhSpcPerson\PublishMvhSpc.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\MvhInfo\GetMvhInfoDetail.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\UserCenter\Index.cshtml" />
+    <Content Include="Views\UserCenter\GetMvhInfoList.cshtml" />
+    <Content Include="Views\UserCenter\GetMvhInfoDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Area\" />
+    <Folder Include="Views\Bid\" />
+    <Folder Include="Views\Login\" />
+    <Folder Include="Views\Score\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

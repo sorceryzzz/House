@@ -3,6 +3,8 @@ using System.Text;
 using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Blowing.MoveHouse.WebPoint.Controllers;
+using Newtonsoft.Json;
+using Blowing.MoveHouse.Model.MoveHouse;
 
 namespace Blowing.MoveHouse.Web.Unit
 {
@@ -25,6 +27,16 @@ namespace Blowing.MoveHouse.Web.Unit
                 //int result = int.Parse(o.Content);
                 //Assert.AreEqual(result > 0, true);
             }
+        }
+       [TestMethod]
+        public void GetBidInfoList()
+        {
+            BidController bidController = new BidController();
+            var jsonObj = bidController.GetBidInfoList(2).Content;
+
+            var bidInfoListEntitys = JsonConvert.DeserializeObject<List<BidInfoExtModel>>(jsonObj);
+
+            Assert.IsTrue(bidInfoListEntitys.Count > 0);
         }
     }
 }
